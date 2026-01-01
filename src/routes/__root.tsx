@@ -4,6 +4,7 @@ import { TanStackDevtools } from "@tanstack/react-devtools"
 
 import appCss from "../styles.css?url"
 import Navbar from "./-components/sections/Navbar"
+import Footer from "./-components/sections/footer"
 
 export const Route = createRootRoute({
     head: () => ({
@@ -37,8 +38,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                 <HeadContent />
             </head>
             <body>
-                 <Navbar />
+                <Navbar />
                 {children}
+                <Footer />
                 <TanStackDevtools
                     config={{
                         position: "bottom-right",
