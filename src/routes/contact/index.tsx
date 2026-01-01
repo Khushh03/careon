@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router"
 
 import { PageHeader } from "@/components/PageHeader"
-import { FAQSection } from "@/components/FAQSection"
-import { ContactSection } from "@/components/ContactSection"
+import { FAQSection } from "@/routes/contact/-components/FAQSection"
+import { ContactSection } from "@/routes/contact/-components/ContactSection"
 import { Flower } from "lucide-react"
 
 export const Route = createFileRoute("/contact/")({
