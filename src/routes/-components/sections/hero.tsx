@@ -16,7 +16,7 @@ export default function HeroSection() {
             <section className="max-w-6xl w-full mx-auto px-4">
                 <div className="max-w-lg space-y-2">
                     {/* Eyebrow / subtitle */}
-                    <p className="text-green-500 font-medium tracking-wide">
+                    <p className="text-primary font-medium tracking-wide">
                         Together, We Create Impact
                     </p>
 
@@ -40,9 +40,12 @@ export default function HeroSection() {
 
                     {/* CTAs */}
                     <div className="flex items-center gap-4 pt-4">
-                        <button className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 text-white font-medium hover:bg-green-600 transition">
+                        <button className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-white font-medium hover:bg-primary/80 transition">
                             Donate Now
-                            <ArrowRight />
+                            <span className="relative size-5 overflow-hidden">
+                                <ArrowRight className="size-5 top-0 left-0 absolute transition-all translate-x-0 group-hover:translate-x-full" />
+                                <ArrowRight className="size-5 top-0 left-0 absolute transition-all -translate-x-full group-hover:translate-x-0" />
+                            </span>
                         </button>
 
                         <button className="inline-flex items-center rounded-full bg-white px-6 py-3 text-black font-medium hover:bg-gray-100 transition">
