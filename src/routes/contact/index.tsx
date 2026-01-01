@@ -1,18 +1,12 @@
 import React, { useState } from "react"
 import { createFileRoute } from "@tanstack/react-router"
 
-import { SectionTitle } from "@/routes/-components/section-title"
 import { PageHeader } from "@/components/PageHeader"
+import { FAQSection } from "@/components/FAQSection"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import {
-    Accordion,
-    AccordionItem,
-    AccordionTrigger,
-    AccordionContent,
-} from "@/components/ui/accordion"
 import { Flower } from "lucide-react"
 
 export const Route = createFileRoute("/contact/")({
@@ -178,92 +172,10 @@ function RouteComponent() {
                                 </p>
                             )}
                         </form>
-
-                        {/* FAQ */}
-                        <div className="mt-8">
-                            <SectionTitle
-                                label="FAQ"
-                                title={`What You're Thinking, We've Answered.`}
-                                subtitle="Find helpful answers to common questions about donating, volunteering & fundraising."
-                            />
-
-                            <div className="mt-4">
-                                <Accordion type="single" collapsible>
-                                    <AccordionItem value="item-1">
-                                        <AccordionTrigger>
-                                            What is your NGO's mission?
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            <p className="text-sm text-muted-foreground">
-                                                Our mission is to create
-                                                sustainable impact through
-                                                community-driven programs
-                                                focusing on education, health
-                                                and livelihood.
-                                            </p>
-                                        </AccordionContent>
-                                    </AccordionItem>
-
-                                    <AccordionItem value="item-2">
-                                        <AccordionTrigger>
-                                            How are donations used?
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            <p className="text-sm text-muted-foreground">
-                                                Donations support program
-                                                delivery, community partners,
-                                                and administrative costs to
-                                                ensure transparency and impact.
-                                            </p>
-                                        </AccordionContent>
-                                    </AccordionItem>
-
-                                    <AccordionItem value="item-3">
-                                        <AccordionTrigger>
-                                            Can I volunteer?
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            <p className="text-sm text-muted-foreground">
-                                                Yes — we welcome volunteers.
-                                                Please reach out via the contact
-                                                form with your area of interest.
-                                            </p>
-                                        </AccordionContent>
-                                    </AccordionItem>
-
-                                    <AccordionItem value="item-4">
-                                        <AccordionTrigger>
-                                            Besides donating, how else can I
-                                            help?
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            <p className="text-sm text-muted-foreground">
-                                                You can help by volunteering,
-                                                spreading awareness, or
-                                                partnering with us for events
-                                                and programs.
-                                            </p>
-                                        </AccordionContent>
-                                    </AccordionItem>
-
-                                    <AccordionItem value="item-5">
-                                        <AccordionTrigger>
-                                            Can I sponsor a child or family?
-                                        </AccordionTrigger>
-                                        <AccordionContent>
-                                            <p className="text-sm text-muted-foreground">
-                                                Yes, sponsorship programs are
-                                                available — contact us and we'll
-                                                share the details.
-                                            </p>
-                                        </AccordionContent>
-                                    </AccordionItem>
-                                </Accordion>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
+            <FAQSection />
         </>
     )
 }
