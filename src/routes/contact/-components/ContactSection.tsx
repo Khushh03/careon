@@ -30,7 +30,7 @@ export function ContactSection() {
     }
 
     return (
-        <div className="py-16 lg:py-24 bg-zinc-50/50">
+        <div className="py-16 lg:py-24 bg-muted-foreground/15">
             <div className="max-w-7xl mx-auto px-4 grid gap-12 lg:grid-cols-2 items-start">
                 <div className="space-y-8">
                     <div className="rounded-2xl overflow-hidden shadow-sm">
@@ -60,12 +60,12 @@ export function ContactSection() {
                                 icon: <MapPin className="size-6" />,
                             },
                         ].map((item) => (
-                            <div className="rounded-lg bg-white p-4 shadow-sm flex items-center gap-4">
-                                <div className="bg-primary p-3 rounded-md text-white">
+                            <div className="rounded-lg bg-card p-4 shadow-sm flex items-center gap-4">
+                                <div className="bg-primary p-3 rounded-md text-primary-foreground">
                                     {item.icon}
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-zinc-900">
+                                    <h4 className="font-bold text-primary">
                                         {item.title}
                                     </h4>
                                     <p className="text-muted-foreground">
