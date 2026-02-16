@@ -4,15 +4,18 @@ import { ArrowRight } from "lucide-react"
 export default function HeroSection() {
     return (
         <div className="h-screen relative z-10 grid items-center">
-            {/* Background video (YouTube embed muted & autoplay) - sits behind the overlay */}
-            <iframe
-                className="absolute top-0 left-1/2 w-screen h-screen -translate-x-1/2 object-cover -z-20 pointer-events-none"
-                src="https://www.youtube.com/embed/sqGg9Er8hnE?autoplay=1&mute=1&controls=0&loop=1&playlist=sqGg9Er8hnE&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1"
-                title="Hero background video"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-            />
+            {/* Background video (YouTube embed muted & autoplay) - full-bleed behind content */}
+            <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
+                <iframe
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[120vw] min-h-[120vh] w-auto h-auto"
+                    src="https://www.youtube.com/embed/sqGg9Er8hnE?autoplay=1&mute=1&controls=0&loop=1&playlist=sqGg9Er8hnE&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&disablekb=1&fs=0&showinfo=0"
+                    title="Hero background video"
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media"
+                    aria-hidden="true"
+                    tabIndex={-1}
+                />
+            </div>
 
             {/* Dark gradient overlay */}
             <div className="absolute inset-0 bg-black mask-t-from-0 -z-10" />
