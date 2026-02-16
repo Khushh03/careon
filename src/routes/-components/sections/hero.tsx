@@ -3,12 +3,7 @@ import { ArrowRight } from "lucide-react"
 
 export default function HeroSection() {
     return (
-        <div
-            style={{
-                backgroundImage: `url("/images/hero-children-running.png")`,
-            }}
-            className="h-screen relative bg-cover z-10 grid items-center"
-        >
+        <div className="h-screen relative z-10 grid items-center">
             {/* Background video (YouTube embed muted & autoplay) - sits behind the overlay */}
             <iframe
                 className="absolute top-0 left-1/2 w-screen h-screen -translate-x-1/2 object-cover -z-20 pointer-events-none"
