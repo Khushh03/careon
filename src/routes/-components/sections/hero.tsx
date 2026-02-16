@@ -9,6 +9,16 @@ export default function HeroSection() {
             }}
             className="h-screen relative bg-cover z-10 grid items-center"
         >
+            {/* Background video (YouTube embed muted & autoplay) - sits behind the overlay */}
+            <iframe
+                className="absolute inset-0 w-full h-full object-cover -z-20 pointer-events-none"
+                src="https://www.youtube.com/embed/sqGg9Er8hnE?autoplay=1&mute=1&controls=0&loop=1&playlist=sqGg9Er8hnE&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1"
+                title="Hero background video"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+            />
+
             {/* Dark gradient overlay */}
             <div className="absolute inset-0 bg-black mask-t-from-0 -z-10" />
 
