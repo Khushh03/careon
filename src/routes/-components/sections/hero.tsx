@@ -11,7 +11,7 @@ export default function HeroSection() {
         >
             {/* Background video (YouTube embed muted & autoplay) - sits behind the overlay */}
             <iframe
-                className="absolute inset-0 w-full h-full object-cover -z-20 pointer-events-none"
+                className="absolute top-0 left-1/2 w-screen h-screen -translate-x-1/2 object-cover -z-20 pointer-events-none"
                 src="https://www.youtube.com/embed/sqGg9Er8hnE?autoplay=1&mute=1&controls=0&loop=1&playlist=sqGg9Er8hnE&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1"
                 title="Hero background video"
                 frameBorder="0"
