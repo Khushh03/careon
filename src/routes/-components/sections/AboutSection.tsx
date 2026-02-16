@@ -19,16 +19,13 @@ export default function AboutSection() {
 
                     {/* Heading */}
                     <h2 className="text-[40px] font-bold text-gray-900 leading-tight tracking-tight font-inter">
-                        United Together to Create <br />
-                        <span className="text-gray-900">Enduring Hope</span>
+                        Healing with Humanity  <br />
+                        <span className="text-gray-900">since 1983.</span>
                     </h2>
 
                     {/* Description */}
                     <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
-                        We are purpose driven organization empowering health &
-                        education. Our mission is to provide sustainable
-                        solutions for communities in need through dedicated
-                        support and global outreach.
+                        Since 1983, Little Flower Leprosy Welfare Association has been serving as a ray of hope for thousands of individuals and families affected by leprosy. Leprosy is not just a physical illness—it often brings along intense social stigma, isolation, and emotional trauma. Those affected are frequently abandoned by their families and pushed out of their communities, stripped of basic human dignity.
                     </p>
 
                     {/* Action Button */}
