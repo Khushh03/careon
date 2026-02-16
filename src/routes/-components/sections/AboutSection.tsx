@@ -39,7 +39,7 @@ export default function AboutSection() {
                 <div className="flex-1 relative">
                     <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white">
                         <img
-                            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1200"
+                            src="https://littleflowerleprosy.org/wp-content/uploads/2025/06/DSCF1954-e1750855463690-600x712.jpg"
                             alt="Community kids smiling"
                             className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
                         />
