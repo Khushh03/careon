@@ -7,7 +7,7 @@ export default function HeroSection() {
             {/* Background video (YouTube embed muted & autoplay) - full-bleed behind content */}
             <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
                 <iframe
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[120vw] min-h-[120vh] w-auto h-auto"
+                    className="absolute top-1/2 left-1/2  min-w-[120vw] min-h-[120vh] w-auto h-auto"
                     src="https://www.youtube.com/embed/sqGg9Er8hnE?autoplay=1&mute=1&controls=0&loop=1&playlist=sqGg9Er8hnE&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&disablekb=1&fs=0&showinfo=0"
                     title="Hero background video"
                     frameBorder="0"
