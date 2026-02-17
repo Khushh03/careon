@@ -24,12 +24,12 @@ export default function HeroSection() {
             <section className="max-w-6xl w-full mx-auto px-4 relative z-20">
                 <div className="max-w-lg space-y-2 md:ml-8 lg:ml-16">
                     {/* Eyebrow / subtitle */}
-                    <p className="text-primary font-medium tracking-wide">
+                    {/* <p className="text-primary font-medium tracking-wide">
                         Together, We Create Impact
-                    </p>
+                    </p> */}
 
                     {/* Title */}
-                    <h1>
+                    {/* <h1>
                         <TextReveal
                             variant="blur"
                             className="text-white text-6xl lg:text-8xl font-medium leading-tight text-wrap"
@@ -38,13 +38,13 @@ export default function HeroSection() {
                             startOnView={false}
                             children="Unite. Act. Transform."
                         />
-                    </h1>
+                    </h1> */}
 
                     {/* Description */}
-                    <p className="max-w-xl text-white/90 text-lg leading-relaxed">
+                    {/* <p className="max-w-xl text-white/90 text-lg leading-relaxed">
                         Your support powers life changing missions feeding
                         families & rebuilding hope.
-                    </p>
+                    </p> */}
 
                     {/* CTAs (moved to bottom center) */}
                 </div>
