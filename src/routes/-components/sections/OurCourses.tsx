@@ -11,50 +11,23 @@ import { ArrowUpRight, ArrowRight } from "lucide-react"
 interface CauseProps {
     image: string
     title: string
-    raised: number
-    goal: number
 }
 
-const CauseCard: React.FC<CauseProps> = ({ image, title, raised, goal }) => {
+const CauseCard: React.FC<CauseProps> = ({ image, title }) => {
     return (
-        <div className="bg-[#121212] border border-white/5 rounded-[2rem] p-5 space-y-6 transition-all hover:border-white/20">
-            {/* Image Container */}
-            <div className="overflow-hidden rounded-2xl">
-                <img
-                    src={image}
-                    alt={title}
-                    className="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
-                />
-            </div>
+        <div className="relative overflow-hidden rounded-xl group">
+            <img
+                src={image}
+                alt={title}
+                className="w-full h-56 sm:h-64 md:h-56 lg:h-60 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
 
-            {/* Content */}
-            <div className="space-y-4">
-                <h3 className="text-white font-bold text-lg leading-tight min-h-[56px]">
-                    {title}
-                </h3>
-
-                {/* Amount Info */}
-                <div className="flex justify-between items-end text-sm">
-                    <div className="space-y-1">
-                        <p className="text-gray-400 font-medium">
-                            Raised Amount
-                        </p>
-                        <p className="text-white font-bold">
-                            ${raised.toLocaleString()}
-                        </p>
-                    </div>
-                    <div className="space-y-1 text-right">
-                        <p className="text-gray-400 font-medium">Goal Amount</p>
-                        <p className="text-white font-bold">
-                            ${goal.toLocaleString()}
-                        </p>
-                    </div>
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                <div className="p-4">
+                    <h3 className="text-white font-semibold text-lg">
+                        {title}
+                    </h3>
                 </div>
-
-                {/* Learn More Button */}
-                <button className="w-full py-3 bg-white text-black rounded-full font-bold text-sm flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors">
-                    Learn More <ArrowRight size={16} />
-                </button>
             </div>
         </div>
     )
@@ -63,66 +36,68 @@ const CauseCard: React.FC<CauseProps> = ({ image, title, raised, goal }) => {
 export default function OurCourses() {
     const causes = [
         {
-            image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800",
-            title: "Fundraising for Education Equality and Access",
-            raised: 40000,
-            goal: 65200,
+            image:
+                "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=1200",
+            title: "Healthcare",
         },
         {
-            image: "https://images.unsplash.com/photo-1541976535096-2f9bbec03be0?q=80&w=800",
-            title: "Building Stronger Futures Through Healthcare Access",
-            raised: 52000,
-            goal: 75200,
+            image:
+                "https://images.unsplash.com/photo-1558980664-10d6d7b4f1b9?q=80&w=1200",
+            title: "Community",
         },
         {
-            image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=800",
-            title: "Empowering Women and Girls Through Education",
-            raised: 80000,
-            goal: 85000,
+            image:
+                "https://images.unsplash.com/photo-1558002037-9b6f8e2b6b3b?q=80&w=1200",
+            title: "Education",
+        },
+        {
+            image:
+                "https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=1200",
+            title: "Agriculture",
+        },
+        {
+            image:
+                "https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&w=1200",
+            title: "Dairy",
+        },
+        {
+            image:
+                "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1200",
+            title: "Handloom",
+        },
+        {
+            image:
+                "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1200",
+            title: "Animal Welfare",
+        },
+        {
+            image:
+                "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200",
+            title: "Women Empowerment",
         },
     ]
 
     return (
-        <section className="bg-black py-24 px-6 font-inter text-white">
-            <div className="max-w-7xl mx-auto space-y-16">
+        <section className="bg-black py-12 px-4 font-inter text-white">
+            <div className="max-w-7xl mx-auto">
                 {/* Header Area */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#00B94E]"></span>
-                            <span className="text-xs font-bold tracking-widest uppercase opacity-70">
-                                Causes
-                            </span>
-                        </div>
-                        <h2 className="text-[28px] font-bold tracking-tight">
-                            Causes That Inspire
-                        </h2>
+                <div className="mb-8">
+                    <div className="flex items-center gap-3">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#00B94E]"></span>
+                        <h3 className="text-xs font-bold tracking-widest uppercase opacity-70">
+                            Our Work
+                        </h3>
                     </div>
-                    <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
-                        From education to relief efforts, every cause reflects
-                        our shared mission to empower.
-                    </p>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
+                        Areas of Work
+                    </h2>
                 </div>
 
-                {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Image Tiles Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                     {causes.map((cause, index) => (
                         <CauseCard key={index} {...cause} />
                     ))}
-                </div>
-
-                {/* Bottom Navigation */}
-                <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-400 text-sm">
-                        Explore all causes and join us in making a meaningful
-                        impact.
-                    </p>
-                    <a
-                        href="#"
-                        className="text-[#00B94E] font-bold text-sm flex items-center gap-1 hover:underline"
-                    >
-                        View All Causes <ArrowUpRight size={18} />
-                    </a>
                 </div>
             </div>
         </section>
