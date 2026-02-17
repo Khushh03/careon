@@ -1,30 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router"
-import { PageHeader } from "@/components/PageHeader"
-
-export const Route = createFileRoute("/areas/education/")({
-  component: RouteComponent,
-})
-
-function RouteComponent() {
-  return (
-    <>
-      <PageHeader
-        badge="Areas of Work"
-        title="Education"
-        description="Programs to expand access to quality education and learning resources."
-        imageSrc="https://images.unsplash.com/photo-1558002037-9b6f8e2b6b3b?q=80&w=1200"
-      />
-
-      <section className="max-w-4xl mx-auto px-6 py-12 text-white">
-        <h3 className="text-2xl font-bold mb-4">About Education</h3>
-        <p className="text-gray-300 leading-relaxed">
-          Detailed information about Education programs, projects, success
-          stories, partner organizations, and ways to get involved.
-        </p>
-      </section>
-    </>
-  )
-}
 import { createFileRoute } from "@tanstack/react-router"import { createFileRoute } from '@tanstack/react-router'
 
 

@@ -5,7 +5,7 @@
 // }
 
 
-import React from "react"
+import React, { useState } from "react"
 
 interface CauseProps {
     image: string
@@ -33,6 +33,8 @@ const CauseCard: React.FC<CauseProps> = ({ image, title }) => {
 }
 
 export default function OurCourses() {
+    const { selected, setSelected } = useSelectedArea()
+
     const causes = [
         {
             image:
@@ -94,24 +96,62 @@ export default function OurCourses() {
 
                 {/* Image Tiles Grid (equal-height columns) */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
-                    {causes.map((cause, index) => {
-                        const slug = cause.title
-                            .toLowerCase()
-                            .replace(/\s+/g, "-")
-                            .replace(/[^a-z0-9-]/g, "")
-
-                        return (
-                            <a
-                                key={index}
-                                href={`/areas/${slug}/`}
-                                className="block h-full"
-                            >
-                                <CauseCard {...cause} />
-                            </a>
-                        )
-                    })}
+                    {causes.map((cause, index) => (
+                        <button
+                            key={index}
+                            type="button"
+                            onClick={() => setSelected(cause)}
+                            className="block h-full text-left"
+                        >
+                            <CauseCard {...cause} />
+                        </button>
+                    ))}
                 </div>
+
+                {/* Detail modal (in-page) */}
+                {selected && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center">
+                        <div
+                            className="absolute inset-0 bg-black/60"
+                            onClick={() => setSelected(null)}
+                        />
+
+                        <div className="relative bg-white rounded-lg overflow-hidden max-w-4xl w-full mx-4 shadow-xl">
+                            <div className="grid grid-cols-1 md:grid-cols-2">
+                                <div className="h-64 md:h-auto">
+                                    <img
+                                        src={selected.image}
+                                        alt={selected.title}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="p-6 text-black">
+                                    <h3 className="text-2xl font-bold mb-3">{selected.title}</h3>
+                                    <p className="text-gray-700 mb-4">
+                                        Detailed information about {selected.title} programs, projects,
+                                        success stories, partner organizations, and ways to get
+                                        involved.
+                                    </p>
+                                    <div className="mt-4 flex gap-3">
+                                        <button
+                                            onClick={() => setSelected(null)}
+                                            className="px-4 py-2 bg-gray-200 rounded-md"
+                                        >
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
     )
+}
+
+// local state for modal
+function useSelectedArea() {
+    const [selected, setSelected] = useState<null | { image: string; title: string }>(null)
+    return { selected, setSelected }
 }
