@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactIndexRouteImport } from './routes/contact/index'
+import { Route as AreasHealthcareRouteImport } from './routes/areas/healthcare'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,30 +23,39 @@ const ContactIndexRoute = ContactIndexRouteImport.update({
   path: '/contact/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AreasHealthcareRoute = AreasHealthcareRouteImport.update({
+  id: '/areas/healthcare',
+  path: '/areas/healthcare',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/areas/healthcare': typeof AreasHealthcareRoute
   '/contact': typeof ContactIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/areas/healthcare': typeof AreasHealthcareRoute
   '/contact': typeof ContactIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/areas/healthcare': typeof AreasHealthcareRoute
   '/contact/': typeof ContactIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact'
+  fullPaths: '/' | '/areas/healthcare' | '/contact'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact'
-  id: '__root__' | '/' | '/contact/'
+  to: '/' | '/areas/healthcare' | '/contact'
+  id: '__root__' | '/' | '/areas/healthcare' | '/contact/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AreasHealthcareRoute: typeof AreasHealthcareRoute
   ContactIndexRoute: typeof ContactIndexRoute
 }
 
@@ -65,11 +75,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/areas/healthcare': {
+      id: '/areas/healthcare'
+      path: '/areas/healthcare'
+      fullPath: '/areas/healthcare'
+      preLoaderRoute: typeof AreasHealthcareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AreasHealthcareRoute: AreasHealthcareRoute,
   ContactIndexRoute: ContactIndexRoute,
 }
 export const routeTree = rootRouteImport

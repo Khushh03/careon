@@ -15,7 +15,7 @@ interface CauseProps {
 
 const CauseCard: React.FC<CauseProps> = ({ image, title }) => {
     return (
-        <div className="relative overflow-hidden rounded-xl group">
+        <div className="relative overflow-hidden rounded-xl group h-full">
             <img
                 src={image}
                 alt={title}
@@ -93,11 +93,24 @@ export default function OurCourses() {
                     </h2>
                 </div>
 
-                {/* Image Tiles Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-                    {causes.map((cause, index) => (
-                        <CauseCard key={index} {...cause} />
-                    ))}
+                {/* Image Tiles Grid (equal-height columns) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
+                    {causes.map((cause, index) => {
+                        const slug = cause.title
+                            .toLowerCase()
+                            .replace(/\s+/g, "-")
+                            .replace(/[^a-z0-9-]/g, "")
+
+                        return (
+                            <a
+                                key={index}
+                                href={`/areas/${slug}/`}
+                                className="block h-full"
+                            >
+                                <CauseCard {...cause} />
+                            </a>
+                        )
+                    })}
                 </div>
             </div>
         </section>
