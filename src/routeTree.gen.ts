@@ -11,7 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactIndexRouteImport } from './routes/contact/index'
+import { Route as AreasWomenEmpowermentRouteImport } from './routes/areas/women-empowerment'
 import { Route as AreasHealthcareRouteImport } from './routes/areas/healthcare'
+import { Route as AreasHandloomRouteImport } from './routes/areas/handloom'
+import { Route as AreasEducationRouteImport } from './routes/areas/education'
+import { Route as AreasDairyRouteImport } from './routes/areas/dairy'
+import { Route as AreasCommunityRouteImport } from './routes/areas/community'
+import { Route as AreasAnimalWelfareRouteImport } from './routes/areas/animal-welfare'
+import { Route as AreasAgricultureRouteImport } from './routes/areas/agriculture'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,39 +30,133 @@ const ContactIndexRoute = ContactIndexRouteImport.update({
   path: '/contact/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AreasWomenEmpowermentRoute = AreasWomenEmpowermentRouteImport.update({
+  id: '/areas/women-empowerment',
+  path: '/areas/women-empowerment',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AreasHealthcareRoute = AreasHealthcareRouteImport.update({
   id: '/areas/healthcare',
   path: '/areas/healthcare',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AreasHandloomRoute = AreasHandloomRouteImport.update({
+  id: '/areas/handloom',
+  path: '/areas/handloom',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasEducationRoute = AreasEducationRouteImport.update({
+  id: '/areas/education',
+  path: '/areas/education',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasDairyRoute = AreasDairyRouteImport.update({
+  id: '/areas/dairy',
+  path: '/areas/dairy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasCommunityRoute = AreasCommunityRouteImport.update({
+  id: '/areas/community',
+  path: '/areas/community',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasAnimalWelfareRoute = AreasAnimalWelfareRouteImport.update({
+  id: '/areas/animal-welfare',
+  path: '/areas/animal-welfare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasAgricultureRoute = AreasAgricultureRouteImport.update({
+  id: '/areas/agriculture',
+  path: '/areas/agriculture',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/areas/agriculture': typeof AreasAgricultureRoute
+  '/areas/animal-welfare': typeof AreasAnimalWelfareRoute
+  '/areas/community': typeof AreasCommunityRoute
+  '/areas/dairy': typeof AreasDairyRoute
+  '/areas/education': typeof AreasEducationRoute
+  '/areas/handloom': typeof AreasHandloomRoute
   '/areas/healthcare': typeof AreasHealthcareRoute
+  '/areas/women-empowerment': typeof AreasWomenEmpowermentRoute
   '/contact': typeof ContactIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/areas/agriculture': typeof AreasAgricultureRoute
+  '/areas/animal-welfare': typeof AreasAnimalWelfareRoute
+  '/areas/community': typeof AreasCommunityRoute
+  '/areas/dairy': typeof AreasDairyRoute
+  '/areas/education': typeof AreasEducationRoute
+  '/areas/handloom': typeof AreasHandloomRoute
   '/areas/healthcare': typeof AreasHealthcareRoute
+  '/areas/women-empowerment': typeof AreasWomenEmpowermentRoute
   '/contact': typeof ContactIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/areas/agriculture': typeof AreasAgricultureRoute
+  '/areas/animal-welfare': typeof AreasAnimalWelfareRoute
+  '/areas/community': typeof AreasCommunityRoute
+  '/areas/dairy': typeof AreasDairyRoute
+  '/areas/education': typeof AreasEducationRoute
+  '/areas/handloom': typeof AreasHandloomRoute
   '/areas/healthcare': typeof AreasHealthcareRoute
+  '/areas/women-empowerment': typeof AreasWomenEmpowermentRoute
   '/contact/': typeof ContactIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/areas/healthcare' | '/contact'
+  fullPaths:
+    | '/'
+    | '/areas/agriculture'
+    | '/areas/animal-welfare'
+    | '/areas/community'
+    | '/areas/dairy'
+    | '/areas/education'
+    | '/areas/handloom'
+    | '/areas/healthcare'
+    | '/areas/women-empowerment'
+    | '/contact'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/areas/healthcare' | '/contact'
-  id: '__root__' | '/' | '/areas/healthcare' | '/contact/'
+  to:
+    | '/'
+    | '/areas/agriculture'
+    | '/areas/animal-welfare'
+    | '/areas/community'
+    | '/areas/dairy'
+    | '/areas/education'
+    | '/areas/handloom'
+    | '/areas/healthcare'
+    | '/areas/women-empowerment'
+    | '/contact'
+  id:
+    | '__root__'
+    | '/'
+    | '/areas/agriculture'
+    | '/areas/animal-welfare'
+    | '/areas/community'
+    | '/areas/dairy'
+    | '/areas/education'
+    | '/areas/handloom'
+    | '/areas/healthcare'
+    | '/areas/women-empowerment'
+    | '/contact/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AreasAgricultureRoute: typeof AreasAgricultureRoute
+  AreasAnimalWelfareRoute: typeof AreasAnimalWelfareRoute
+  AreasCommunityRoute: typeof AreasCommunityRoute
+  AreasDairyRoute: typeof AreasDairyRoute
+  AreasEducationRoute: typeof AreasEducationRoute
+  AreasHandloomRoute: typeof AreasHandloomRoute
   AreasHealthcareRoute: typeof AreasHealthcareRoute
+  AreasWomenEmpowermentRoute: typeof AreasWomenEmpowermentRoute
   ContactIndexRoute: typeof ContactIndexRoute
 }
 
@@ -75,6 +176,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/areas/women-empowerment': {
+      id: '/areas/women-empowerment'
+      path: '/areas/women-empowerment'
+      fullPath: '/areas/women-empowerment'
+      preLoaderRoute: typeof AreasWomenEmpowermentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/areas/healthcare': {
       id: '/areas/healthcare'
       path: '/areas/healthcare'
@@ -82,12 +190,61 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasHealthcareRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/areas/handloom': {
+      id: '/areas/handloom'
+      path: '/areas/handloom'
+      fullPath: '/areas/handloom'
+      preLoaderRoute: typeof AreasHandloomRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/education': {
+      id: '/areas/education'
+      path: '/areas/education'
+      fullPath: '/areas/education'
+      preLoaderRoute: typeof AreasEducationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/dairy': {
+      id: '/areas/dairy'
+      path: '/areas/dairy'
+      fullPath: '/areas/dairy'
+      preLoaderRoute: typeof AreasDairyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/community': {
+      id: '/areas/community'
+      path: '/areas/community'
+      fullPath: '/areas/community'
+      preLoaderRoute: typeof AreasCommunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/animal-welfare': {
+      id: '/areas/animal-welfare'
+      path: '/areas/animal-welfare'
+      fullPath: '/areas/animal-welfare'
+      preLoaderRoute: typeof AreasAnimalWelfareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas/agriculture': {
+      id: '/areas/agriculture'
+      path: '/areas/agriculture'
+      fullPath: '/areas/agriculture'
+      preLoaderRoute: typeof AreasAgricultureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AreasAgricultureRoute: AreasAgricultureRoute,
+  AreasAnimalWelfareRoute: AreasAnimalWelfareRoute,
+  AreasCommunityRoute: AreasCommunityRoute,
+  AreasDairyRoute: AreasDairyRoute,
+  AreasEducationRoute: AreasEducationRoute,
+  AreasHandloomRoute: AreasHandloomRoute,
   AreasHealthcareRoute: AreasHealthcareRoute,
+  AreasWomenEmpowermentRoute: AreasWomenEmpowermentRoute,
   ContactIndexRoute: ContactIndexRoute,
 }
 export const routeTree = rootRouteImport

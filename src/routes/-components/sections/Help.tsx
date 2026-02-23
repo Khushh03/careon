@@ -10,9 +10,9 @@ import {
     ChevronRight,
     ArrowUpRight,
     Heart,
-    Zap,
     BarChart3,
-    Flag,
+    BookOpen,
+    Smile,
 } from "lucide-react"
 
 interface TransformCardProps {
@@ -65,34 +65,34 @@ export default function Help() {
 
     const cards = [
         {
-            icon: <Heart size={20} />,
-            title: "Strengthen Social Good",
+            icon: <BookOpen size={20} />,
+            title: "Children’s Education",
             description:
-                "Sponsorships grow awareness and strengthen your brand's purpose.",
-            image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=800",
+                "Free residential schooling for children of leprosy-affected families, empowering them with knowledge and confidence.",
+            image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800",
         },
         {
-            icon: <Zap size={20} />,
-            title: "Power Meaningful Change",
+            icon: <Heart size={20} />,
+            title: "Leprosy Care",
             description:
-                "Financial gifts help drive lasting progress in key cause areas.",
-            image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800",
+                "Providing free medical treatment, surgeries, and rehabilitation to leprosy-affected individuals with dignity.",
+            image: "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=800",
             isMain: true,
         },
         {
             icon: <BarChart3 size={20} />,
-            title: "Fuel Greater Impact",
+            title: "Livelihood Programs",
             description:
-                "Your donation scales our work and reaches more communities in need.",
-            image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800",
+                "Skill-building through Khadi, tailoring, dairy, and handicrafts to promote self-reliance and economic stability.",
+            image: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da?q=80&w=800",
             isMain: true,
         },
         {
-            icon: <Flag size={20} />,
-            title: "Share Valuable Resources",
+            icon: <Smile size={20} />,
+            title: "Make Them Happy",
             description:
-                "In-kind support accelerates logistics, technology, and field operations.",
-            image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=800",
+                "Building eco-friendly mud homes and safe colonies to ensure dignity, safety, and a sense of belonging.",
+            image: "https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?q=80&w=800",
         },
     ]
 
@@ -110,6 +110,19 @@ export default function Help() {
     return (
         <section className="py-24 px-6 bg-white font-inter">
             <div className="max-w-7xl mx-auto space-y-12">
+                {/* Hero / Impact Intro (from design) */}
+                <div className="text-left">
+                    <p className="text-sm font-semibold text-gray-500 uppercase tracking-widest">
+                        We're Helping Hand On
+                    </p>
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-4">
+                        5,000 Individuals In 22+ Colony
+                    </h2>
+                    <p className="mt-6 text-gray-600 max-w-3xl leading-relaxed">
+                        At Little Flower Leprosy Welfare Association, we stand beside over 5,000 families affected by leprosy, spread across 22+ underserved colonies. With compassion at our core, we provide healthcare, education, livelihood support, and dignity to those often forgotten. Each family we touch is a step closer to healing, hope, and a better future.
+                    </p>
+                </div>
+
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
                     <div className="space-y-4">
@@ -124,8 +137,7 @@ export default function Help() {
                         </h2>
                     </div>
                     <p className="text-gray-500 text-sm md:text-base max-w-sm leading-relaxed font-medium">
-                        Feeding families, educating children, impacting lives
-                        compassion and support.
+                        Feeding families, educating children, impacting lives with compassion and support.
                     </p>
                 </div>
 
@@ -145,8 +157,7 @@ export default function Help() {
                 {/* Bottom Navigation & Progress */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-10 border-t border-gray-100">
                     <p className="text-gray-400 text-sm max-w-[240px]">
-                        Your support can transformed lives and inspire better
-                        futures.
+                        Your support can transform lives and inspire better futures.
                     </p>
 
                     <div className="flex items-center gap-6 flex-1 max-w-md">
